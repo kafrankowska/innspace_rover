@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+
+    <!-- Include macros -->
+    <xacro:include filename="$(find rover_description)/urdf/materials.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
+
+    <!-- Example link -->
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <box size="0.01 0.01 0.01"/>
+            </geometry>
+            <material name="orange" />
+        </visual>
+    </link>
+
+</robot>
