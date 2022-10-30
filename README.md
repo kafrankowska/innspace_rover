@@ -1,3 +1,4 @@
+![image info](./data/imgs/rover_sim.png)
 # Innspace Rover Autonomous Navigation System
 ---
 This is a Innspace Rover Autonomous Navigation System implemented in ROS2 Humble. Workspace contains set of packages that enable to simulate, test, use and integrate systems required for autonomous navigation tasks.
@@ -37,6 +38,7 @@ ros2 launch rover_description launch_sim.launch.py
 
 ### rover_simulation
 ---
+
 
 Tutaj opis paczki 
 
