@@ -13,8 +13,8 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0" />
                 <geometry>
-                    <mesh filename="file://$(find rover_description)/meshes/bases/body_box2.stl" /> 
-                    <!-- <box size="${body_box_length} ${body_box_width} ${body_box_depth}"/> -->
+                    <mesh filename="file://$(find rover_description)/meshes/bases/body_box.stl" /> 
+                 <!-- <box size="${body_box_length} ${body_box_width} ${body_box_depth}"/> -->  
                 </geometry>
                 <material name="white" />
             </visual>
