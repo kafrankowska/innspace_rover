@@ -44,6 +44,14 @@
       </geometry>
     </collision>
   </link>
+
+
+  <gazebo reference="base_link">
+        <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+
   <link
     name="front_right_wheel_link">
     <inertial>
@@ -84,6 +92,12 @@
       </geometry>
     </collision>
   </link>
+
+  <gazebo reference="front_right_wheel_link">
+        <material>Gazebo/Gray</material>
+  </gazebo>
+
+
   <joint
     name="front_right_wheel_joint"
     type="continuous">
