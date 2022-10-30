@@ -4,8 +4,8 @@
 
     <!-- Include macros -->
     <xacro:include filename="$(find rover_description)/urdf/materials.xacro"/>
-    <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
+    
     <xacro:include filename="$(find rover_description)/urdf/bases/rover_description.urdf.xacro" />
-
+    <xacro:include filename="$(find rover_description)/urdf/sensors/camera.urdf.xacro" />
 
 </robot>
