@@ -4,8 +4,14 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="rover_description">
+
+
   <link
     name="base_link">
+
+  </link>
+
+  <link name="chassis_link">
     <inertial>
       <origin
         xyz="0.014675 4.4183E-17 -0.040844"
@@ -26,7 +32,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="file://$(find rover_description)/meshes/base_link.STL" />
+          filename="file://$(find rover_description)/meshes/chassis_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,17 +46,21 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="file://$(find rover_description)/meshes/base_link.STL" />
+          filename="file://$(find rover_description)/meshes/chassis_link.STL" />
       </geometry>
     </collision>
   </link>
 
 
-  <gazebo reference="base_link">
+  <gazebo reference="chassis_link">
         <material>Gazebo/Orange</material>
   </gazebo>
 
-
+  <joint name="chassis_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="chassis_link" />
+    <origin xyz="0 0 0" />
+  </joint>
 
   <link
     name="front_right_wheel_link">
@@ -59,7 +69,7 @@
         xyz="0.0146753114930385 4.4183075589603E-17 -0.0408444702966285"
         rpy="0 0 0" />
       <mass
-        value="7" />
+        value="1" />
       <inertia
         ixx="0.440773403043026"
         ixy="2.0222253827549E-16"
@@ -111,6 +121,8 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+  
   <link
     name="rear_right_wheel_link">
     <inertial>
@@ -118,7 +130,7 @@
         xyz="0.0146753114930385 4.4183075589603E-17 -0.0408444702966285"
         rpy="0 0 0" />
       <mass
-        value="7" />
+        value="1" />
       <inertia
         ixx="0.440773403043026"
         ixy="2.0222253827549E-16"
@@ -151,6 +163,12 @@
       </geometry>
     </collision>
   </link>
+
+  <gazebo reference="rear_right_wheel_link">
+        <material>Gazebo/Gray</material>
+  </gazebo>
+
+
   <joint
     name="rear_right_wheel_joint"
     type="continuous">
@@ -171,7 +189,7 @@
         xyz="0.0146753114930385 4.4183075589603E-17 -0.0408444702966285"
         rpy="0 0 0" />
       <mass
-        value="7" />
+        value="1" />
       <inertia
         ixx="0.440773403043026"
         ixy="2.0222253827549E-16"
@@ -204,6 +222,11 @@
       </geometry>
     </collision>
   </link>
+
+  <gazebo reference="front_left_wheel_link">
+        <material>Gazebo/Gray</material>
+  </gazebo>
+
   <joint
     name="front_left_wheel_joint"
     type="continuous">
@@ -224,7 +247,7 @@
         xyz="0.0146753114930385 4.4183075589603E-17 -0.0408444702966285"
         rpy="0 0 0" />
       <mass
-        value="7" />
+        value="1" />
       <inertia
         ixx="0.440773403043026"
         ixy="2.0222253827549E-16"
@@ -257,6 +280,11 @@
       </geometry>
     </collision>
   </link>
+
+  <gazebo reference="rear_left_wheel_link">
+        <material>Gazebo/Gray</material>
+  </gazebo>
+
   <joint
     name="rear_left_wheel_joint"
     type="continuous">

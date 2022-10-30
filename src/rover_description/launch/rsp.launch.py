@@ -8,7 +8,7 @@ import xacro
 def generate_launch_description():
 
     xacro_file = os.path.join(get_package_share_directory(
-        "rover_description"), "robots/rover_description.urdf.xacro")
+        "rover_description"), "robots/rover.urdf.xacro")
 
     doc = xacro.parse(open(xacro_file))
     xacro.process_doc(doc)
