@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<!--  xacro macros for oakd mount -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="camera">
+
+    <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
+    <xacro:include filename="$(find rover_description)/urdf/sensors/imu.xacro"/>
+
+    <joint name="imu_joint" type="fixed">
+      <parent link="chassis_link" />
+      <child link="base_imu_link" />
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:imu_link prefix="base"/>
+</robot>
