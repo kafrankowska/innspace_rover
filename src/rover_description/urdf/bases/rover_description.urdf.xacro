@@ -52,7 +52,7 @@
 
 
   <gazebo reference="chassis_link">
-        <material>Gazebo/Orange</material>
+        <material>Gazebo/White</material>
   </gazebo>
 
   <joint name="chassis_joint" type="fixed">

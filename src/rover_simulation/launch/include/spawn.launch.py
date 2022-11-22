@@ -52,14 +52,14 @@ def generate_launch_description():
         package="controller_manager",
         executable = "spawner.py",
         arguments=[ "diff_cont",
-                    "--controller-manager-timeout", "120"]
+                    "--controller-manager-timeout", " 120"]
     )
 
     joint_broad_spawner = Node(
         package = "controller_manager",
         executable = "spawner.py",
-        arguments = [ "joint_broad"
-                    "--controller-manager-timeout", "120"],
+        arguments = [ "joint_broad",
+                    "--controller-manager-timeout", " 120"],
     )
 
     ### LAUNCH ###

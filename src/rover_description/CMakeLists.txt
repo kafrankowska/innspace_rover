@@ -17,6 +17,16 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+
+find_package(gazebo REQUIRED)
+find_package(gazebo_ros REQUIRED)
+find_package(gazebo_ros2_control REQUIRED)
+find_package(controller_manager REQUIRED)
+find_package(rviz2 REQUIRED)
+find_package(joint_state_broadcaster REQUIRED)
+find_package(robot_state_publisher REQUIRED)
+find_package(xacro REQUIRED)
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)

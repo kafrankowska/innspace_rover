@@ -32,21 +32,34 @@ ros2 launch rover_description launch_sim.launch.py
 ---
 > Packages list: 
 > 
->  - __rover_simulation__ - package responsible for defining simulation enviroment
 > - __rover_description__ - package containing rover description
+>  - __rover_simulation__ - package responsible for defining simulation enviroment
+
+
+### rover_description
+---
+
+This package aims to declare robot structure, sensors, and driver controller in order to simulate robot behaviour in Gazebo and/or RVIZ.
+
+Rover is equipped with OAK-D lite stereo camera and IMU system. Rover description  assumes differential drive controller which can be handeled with twist teleoperation.
+
+ For keyboard teleop type in terminal: 
+ <pre><code>
+ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+ </code></pre>
 
 
 ### rover_simulation
 ---
 
+Rover simulation package is responsible for launching different declared gazebo simulations enviroments. Rover_description package is mandatory for simulation. User is able to check performance of rover's systems and implemented algorithms.
 
-Tutaj opis paczki 
+Package contains following worlds scenarios:
+> - __ERC 2022 Marsyard World__ - 3D enviroment model provided by ERC organizators
+![image info](./data/imgs/Rover_4.png)
 
-### rover_description
----
 
-This package aims to declare robot structure, sensors, and driver controller in order to simulate robot behaviour in Gazebo or RVIZ. For keyboard teleop type: 
- <pre><code>
- ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
- </code></pre>
+
+
+
 
