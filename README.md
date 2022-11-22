@@ -45,4 +45,8 @@ Tutaj opis paczki
 ### rover_description
 ---
 
-Tutaj opis paczki
+This package aims to declare robot structure, sensors, and driver controller in order to simulate robot behaviour in Gazebo or RVIZ. For keyboard teleop type: 
+ <pre><code>
+ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+ </code></pre>
+

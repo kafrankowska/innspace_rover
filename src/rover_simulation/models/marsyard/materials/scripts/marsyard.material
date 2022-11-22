@@ -1,0 +1,23 @@
+material marsyard/Diffuse
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture ../textures/texture_1001.png
+                texture ../textures/texture_1002.png
+                texture ../textures/texture_1003.png
+                texture ../textures/texture_1004.png
+                texture ../textures/texture_1005.png
+                texture ../textures/texture_1006.png
+                texture ../textures/texture_1007.png
+                texture ../textures/texture_1008.png
+                texture ../textures/texture_1009.png
+                texture ../textures/texture_1010.png
+                texture ../textures/texture_1011.png
+            }
+        }
+    }    
+}
