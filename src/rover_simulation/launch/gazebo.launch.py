@@ -13,12 +13,12 @@ def generate_launch_description():
 
     pkg_path = get_package_share_directory("rover_simulation")
     pkg_gazebo_ros = get_package_share_directory("gazebo_ros")
-
+    pkg_rover_localization = get_package_share_directory("rover_localization")
 
     rviz_config = os.path.join(
         pkg_path,
         "rviz",
-        "default.rviz")
+        "base_config.rviz")
 
     ### ARGS ###
     world = LaunchConfiguration("world")
@@ -107,6 +107,13 @@ def generate_launch_description():
         }.items()
     )
 
+    localization_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_rover_localization,
+                "launch","localization.launch.py")),
+            launch_arguments={"use_sim_time": "True"}.items()
+    )
+
     ld = LaunchDescription()
 
     ld.add_action(launch_gui_cmd)
@@ -120,6 +127,8 @@ def generate_launch_description():
 
     ld.add_action(gazebo_client_cmd)
     ld.add_action(gazebo_server_cmd)
+
+    ld.add_action(localization_cmd)
     ld.add_action(spawn_cmd)
     ld.add_action(rviz_cmd)
 

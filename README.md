@@ -34,6 +34,7 @@ ros2 launch rover_description launch_sim.launch.py
 > 
 > - __rover_description__ - package containing rover description
 >  - __rover_simulation__ - package responsible for defining simulation enviroment
+>  - __rover_localization__ - package meant to integrate rover's odometry system. It fuses information coming from wheel encoders, IMU and GPS and it publishes smooth Odometry frames with <mark>odom</mark> which is transfered to <mark>base_link</mark>
 
 
 ### rover_description
@@ -57,6 +58,22 @@ Rover simulation package is responsible for launching different declared gazebo 
 Package contains following worlds scenarios:
 > - __ERC 2022 Marsyard World__ - 3D enviroment model provided by ERC organizators
 ![image info](./data/imgs/Rover_4.png)
+
+
+### rover_localization
+---
+Package provides smooth and accurate odometry information based on fused sensor information from the data provided by wheel encoders and IMU platform. through geometry_msgs/PoseWithCovarianceStamped and geometry_msgs/TwistWithCovarianceStamped. 
+
+Package uses  Extended Kalman filter state stmiator to implement fusion. 
+
+Future release shall increase functionality with navsat_transform_node which transforms geographic coordinates into the robot’s world frame  that enables working with GPS systems. 
+
+Main resource for this package is provided in this docs: 
+https://navigation.ros.org/setup_guides/odom/setup_odom.html#configuring-robot-localization
+
+
+
+
 
 
 
