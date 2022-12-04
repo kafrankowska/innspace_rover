@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
-<!--  xacro macros for oakd mount -->
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="camera">
+<!--  xacro macros for odometry-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="odometry">
 
     <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
     <xacro:include filename="$(find rover_description)/urdf/sensors/imu.xacro"/>
