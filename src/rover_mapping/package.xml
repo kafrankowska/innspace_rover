@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>rover_simulation</name>
+  <name>rover_mapping</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="kafrankowska@outlook.com">kafra</maintainer>
@@ -12,18 +12,7 @@
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
-  <depend>gazebo</depend>
-  <depend>gazebo_ros</depend>
-  <depend>controller_manager</depend>
-  <depend>rviz2</depend>
-
-  <depend>rover_description</depend>
-  <depend>rover_localization</depend>
-  <depend>rover_mapping</depend>
-
-
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>

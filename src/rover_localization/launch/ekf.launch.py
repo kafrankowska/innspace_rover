@@ -10,7 +10,7 @@ def generate_launch_description():
        use_sim_time = LaunchConfiguration("use_sim_time")
        use_sim_time_cmd = DeclareLaunchArgument(
               "use_sim_time",
-              default_value="False",
+              default_value="True",
               description = "Use simulation clock if True")
 
        params_file = os.path.join(
@@ -33,8 +33,8 @@ def generate_launch_description():
                       name="ekf_filter_node",
                       output="log",
                       parameters=[configured_params],
-                      #remappings=[("odometry/filtered","/odom"),
-                      #             ("accel/filtered", "/accel")] 
+                      remappings=[("odometry/filtered","/odom"),
+                                  ("accel/filtered", "/accel")] 
                                    )
 
        ld = LaunchDescription()

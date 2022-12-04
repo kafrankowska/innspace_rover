@@ -13,7 +13,7 @@ def generate_launch_description():
 
     use_sim_time_cmd = DeclareLaunchArgument(
         "use_sim_time",
-        default_value="False",
+        default_value="True",
         description="Use simulation (Gazebo) clock if True")
 
     ekf_cmd = IncludeLaunchDescription(
@@ -24,6 +24,7 @@ def generate_launch_description():
     )
 
     ld = LaunchDescription()
+    ld.add_action(use_sim_time_cmd)
     ld.add_action(ekf_cmd)
 
     return ld

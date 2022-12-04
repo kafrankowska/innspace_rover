@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(rover_simulation)
+project(rover_mapping)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,30 +17,6 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-
-
-find_package(gazebo REQUIRED)
-find_package(gazebo_ros REQUIRED)
-find_package(controller_manager REQUIRED)
-find_package(rviz2 REQUIRED)
-
-find_package(rover_description REQUIRED)
-find_package(rover_localization REQUIRED)
-find_package(rover_mapping REQUIRED)
-
-
-
-
-INCLUDE_DIRECTORIES(
-  include
-)
-
-
-install(
-  DIRECTORY launch worlds models rviz
-  DESTINATION share/${PROJECT_NAME}
-)
-
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -55,5 +31,8 @@ if(BUILD_TESTING)
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+install(DIRECTORY launch config
+  DESTINATION share/${PROJECT_NAME})
 
 ament_package()
