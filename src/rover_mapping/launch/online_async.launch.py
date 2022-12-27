@@ -28,7 +28,7 @@ def generate_launch_description():
         parameters=[slam_params_file,
                     {'use_sim_time': use_sim_time}],
         package='slam_toolbox',
-        executable='sync_slam_toolbox_node',
+        executable='async_slam_toolbox_node',
         name='slam_toolbox',
         output="screen", #"log",
     )
