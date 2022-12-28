@@ -1,0 +1,3 @@
+resolution: 0.05
+footprint: "[ [0.21, 0.195], [0.21, -0.195], [-0.21, -0.195], [-0.21, 0.195] ]"
+plugins: ["voxel_layer", "inflation_layer"]

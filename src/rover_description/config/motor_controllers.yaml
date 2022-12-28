@@ -20,6 +20,9 @@ diff_cont:
     right_wheel_names: ['front_right_wheel_joint', 'rear_right_wheel_joint']
 
     wheel_separation: 0.94224
-    wheel_radius: 0.1275
+    wheel_radius:  0.1275
+
+    pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+    twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 
     use_stamped_vel: false
